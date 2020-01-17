@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="ver03.Views.Registration"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ver03.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="680" d:DesignWidth="960">
+
+    <UserControl.Resources>
+        
+        <Style x:Key="ST2">
+            <Setter Property="Control.FontSize" Value="34" />
+            <Setter Property="Control.HorizontalAlignment" Value="Center" />
+            <Setter Property="Control.Background" Value="#4E57FF" />
+            <Setter Property="Control.Foreground" Value="#FF686868" />
+        </Style>
+        
+        
+    </UserControl.Resources>
+    <Grid Background="{StaticResource grey00}">
+        <StackPanel  VerticalAlignment="Center">
+            <TextBlock Text="Логин" Style="{StaticResource ST2}"/>
+            <TextBox  x:Name="box_nick" Style="{StaticResource TextBoxStyle00_ByRegistration_def}" LostFocus="box_nick_LostFocus" SelectionChanged="box_nick_SelectionChanged"  TextAlignment="Center"/>
+            <TextBlock Text="Пароль" Style="{StaticResource ST2}"/>
+            <PasswordBox x:Name="box_password1" Style="{StaticResource PasswordBox_def}" PasswordChanged="box_password1_PasswordChanged" LostFocus="box_password1_LostFocus"    HorizontalContentAlignment="Center"/>
+            <PasswordBox x:Name="box_password2" Style="{StaticResource PasswordBox_def}" PasswordChanged="box_password2_PasswordChanged" LostFocus="box_password2_LostFocus"  HorizontalContentAlignment="Center"/>
+            <TextBlock Text="E-mail" Style="{StaticResource ST2}"/>
+            <TextBox  x:Name="box_email" Style="{StaticResource TextBoxStyle00_ByRegistration_def}" SelectionChanged="box_email_SelectionChanged" LostFocus="box_email_LostFocus"   TextAlignment="Center" Margin="122,5,118,5"/>
+            <TextBlock Text="Телефон" Style="{StaticResource ST2}"/>
+            <TextBox x:Name="box_telephone" Style="{StaticResource TextBoxStyle00_ByRegistration_def}" SelectionChanged="box_telephone_TextChanged" LostFocus="box_telephone_LostFocus"  Text="+375 " TextAlignment="Center"/>
+            <TextBlock Text="Как к вам обращаться?" Style="{StaticResource ST2}"/>
+            <TextBox  x:Name="box_name" Style="{StaticResource TextBoxStyle00_ByRegistration_def}"  SelectionChanged="box_name_SelectionChanged" TextAlignment="Center"/>
+            <Button Command="{Binding but_regist, Mode=OneTime}" Click="But_Regist_Click"
+                  Content="Зарегестрироваться" Margin="120 5 120 5" Style="{StaticResource ButStyle00}" />
+        </StackPanel>
+    </Grid>
+
+</UserControl>

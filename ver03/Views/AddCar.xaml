@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="ver03.Views.AddCar"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ver03.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="680" d:DesignWidth="770" >
+    <UserControl.Resources>
+        <Style x:Key="ST1">
+            <Setter Property="Control.FontSize" Value="20" />
+            <Setter Property="Control.BorderBrush" Value="Black" />
+            <Setter Property="Control.BorderThickness" Value="0"/>
+            <Setter Property="Control.Foreground" Value="{StaticResource grey01}" />
+            <Setter Property="Control.Margin" Value="5" />
+        </Style>
+        <Style x:Key="TextBoxST1">
+            <Setter Property="Control.FontSize" Value="20" />
+            <Setter Property="Control.BorderBrush" Value="Black" />
+            <Setter Property="Control.BorderThickness" Value="0"/>
+            <Setter Property="Control.Background" Value="#FF686868" />
+            <Setter Property="Control.Foreground" Value="White" />
+            <Setter Property="Control.Margin" Value="10" />
+        </Style>
+    </UserControl.Resources>
+
+
+        <Grid>
+            <ScrollViewer>
+            <Grid Grid.Column="1" Background="{StaticResource grey00}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition  Height="100"/>
+                </Grid.RowDefinitions>
+                <Label Style="{StaticResource ST1}" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="0">
+                    <TextBlock TextDecorations="Underline" Text="Марка"/>
+                </Label>
+                <Label Style="{StaticResource ST1}" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="0">
+                    <TextBlock TextDecorations="Underline" Text="Модель"/>
+                </Label>
+                <Label Style="{StaticResource ST1}" HorizontalAlignment="Right" Grid.Row="2" Grid.Column="0">
+                    <TextBlock TextDecorations="Underline" Text="Кузов"/>
+                </Label>
+                <Label Style="{StaticResource ST1}" HorizontalAlignment="Right" Grid.Row="3" Grid.Column="0">
+                    <TextBlock TextDecorations="Underline" Text="Год выпуска"/>
+                </Label>
+                <Label Style="{StaticResource ST1}" HorizontalAlignment="Right" Grid.Row="4" Grid.Column="0">
+                    <TextBlock TextDecorations="Underline" Text="Тип топлива"/>
+                </Label>
+                <Label Style="{StaticResource ST1}" HorizontalAlignment="Right" Grid.Row="5" Grid.Column="0">
+                    <TextBlock TextDecorations="Underline" Text="Пробег (км.)"/>
+                </Label>
+                <Label Style="{StaticResource ST1}" HorizontalAlignment="Right" Grid.Row="6" Grid.Column="0">
+                    <TextBlock TextDecorations="Underline" Text="Описание"/>
+                </Label>
+                <Label Style="{StaticResource ST1}" HorizontalAlignment="Right" Grid.Row="7" Grid.Column="0">
+                    <TextBlock TextDecorations="Underline" Text="Фото:"/>
+                </Label>
+                <Button Height="50" Width="50" Margin="0,0,10,30" Grid.Row="7" Grid.Column="0"
+                 Click="But_Add_Car_Photo"
+		VerticalAlignment="Bottom" HorizontalAlignment="Right" 
+		Template="{StaticResource AddCarPhotoTemplate2}"/>
+
+                <Label Style="{StaticResource ST1}" HorizontalAlignment="Right" Grid.Row="8" Grid.Column="0">
+                    Объём двиг.
+                </Label>
+                <Label Style="{StaticResource ST1}" HorizontalAlignment="Right" Grid.Row="9" Grid.Column="0">
+                    КПП
+                </Label>
+                <Label Style="{StaticResource ST1}" HorizontalAlignment="Right" Grid.Row="10" Grid.Column="0">
+                    Руль
+                </Label>
+
+
+                <ComboBox SelectedIndex="0" x:Name="cb_Brend" SelectionChanged="cb_Brend_Selected"
+                          Style="{StaticResource ComboBoxFlatStyle}" Foreground="{StaticResource grey01}" 
+                          ItemsSource="{Binding CarBrends}" IsEditable="True" Margin="10,8,10,8"
+                      Grid.Row="0" Grid.Column="1"/>
+                <TextBox x:Name="tb_Model" TextChanged="tb_Model_TextChanged" Style="{StaticResource TextBoxST1}" Grid.Row="1" Grid.Column="1"/>
+                <ComboBox SelectedIndex="0" Style="{StaticResource ComboBoxFlatStyle}" x:Name="cb_CarType" SelectionChanged="cb_CarType_SelectionChanged"
+                          Foreground="{StaticResource grey01}" ItemsSource="{Binding CarBodyes}"
+                      Grid.Row="2" Grid.Column="1" Margin="10,8,10,8"/>
+                <TextBox x:Name="tb_Year" Style="{StaticResource TextBoxST1}" Grid.Row="3" Grid.Column="1" TextChanged="tb_Year_TextChanged"/>
+                <ComboBox x:Name="cb_Fuel" SelectedIndex="0" Style="{StaticResource ComboBoxFlatStyle}" Foreground="{StaticResource grey01}" ItemsSource="{Binding CarFuel}"
+                      Grid.Row="4" Grid.Column="1" Margin="10,8,10,8" SelectionChanged="cb_Fuel_SelectionChanged"/>
+                <TextBox x:Name="tb_Mileage" Style="{StaticResource TextBoxST1}" Grid.Row="5" Grid.Column="1" TextChanged="tb_Mileage_TextChanged"/>
+                <RichTextBox x:Name="rtb_Context" Style="{StaticResource TextBoxST1}" MinHeight="90" TextChanged="rtb_Context_TextChanged"
+                         Grid.Row="6" Grid.Column="1"/>
+
+                <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled" Height="140" 
+                      Grid.Row="7" Grid.Column="1" Background="White" Margin="10,0,10,0">
+                    <StackPanel x:Name="sp_CarPhotos" Orientation="Horizontal"/>
+                </ScrollViewer>
+                <ComboBox SelectedIndex="0" Style="{StaticResource ComboBoxFlatStyle}" Foreground="{StaticResource grey01}" ItemsSource="{Binding EngineAmount}"
+                      Grid.Row="8" Grid.Column="1" Margin="10,8,10,8" SelectionChanged="ComboBox_EngineAmount_SelectionChanged"/>
+                <ComboBox SelectedIndex="0" Style="{StaticResource ComboBoxFlatStyle}" Foreground="{StaticResource grey01}" ItemsSource="{Binding GearType}"
+                      Grid.Row="9" Grid.Column="1" Margin="10,8,10,8" SelectionChanged="ComboBox_GearType_SelectionChanged"/>
+                <ComboBox SelectedIndex="0" Style="{StaticResource ComboBoxFlatStyle}" Foreground="{StaticResource grey01}" ItemsSource="{Binding SteerWheel}"
+                      Grid.Row="10" Grid.Column="1" Margin="10,8,10,8" SelectionChanged="ComboBox_SteeringWheel_SelectionChanged"/>
+            </Grid>
+            </ScrollViewer>
+        <Button Command="{Binding Add_car, Mode=OneTime}"  Style="{StaticResource ButStyle00}"
+                Content="Добавить" FontSize="23" Height="50" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                    Click="But_Add_Car" Margin="0,0,30,20"/>
+        </Grid>
+
+
+</UserControl>

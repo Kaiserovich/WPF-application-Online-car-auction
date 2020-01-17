@@ -1,0 +1,159 @@
+﻿<Window x:Class="ver03.AdminWIndow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ver03"
+        mc:Ignorable="d"
+        Title="AdminWIndow" Height="450" Width="800" Background="{StaticResource grey00}" FontSize="16">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1">
+            <Button Content="Load" Click="But_Load"/>
+            <Button Content="Upload" Click="But_UpLoad"/>
+        </StackPanel>
+        <TabControl>
+            <TabItem Header="users" >
+                <DataGrid x:Name="dg_users" AutoGenerateColumns="False" 
+                          CellEditEnding="dg_users_CellEditEnding">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding id}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="nick" Binding="{Binding nick, Mode=TwoWay}"/>
+                        <DataGridTextColumn Header="pass Hash" Binding="{Binding password, Mode=TwoWay}"/>
+                        <DataGridTextColumn Header="IsAdmin" Binding="{Binding isAdmin, Mode=TwoWay}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="users_info">
+                <DataGrid x:Name="dg_users_info" AutoGenerateColumns="False" 
+                          CellEditEnding="dg_users_info_CellEditEnding">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding id}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="name" Binding="{Binding name, Mode=TwoWay}"/>
+                        <DataGridTextColumn Header="telephone" Binding="{Binding telephone, Mode=TwoWay}"/>
+                        <DataGridTextColumn Header="email" Binding="{Binding email, Mode=TwoWay}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="users_log" >
+                <DataGrid x:Name="dg_users_log" AutoGenerateColumns="False" 
+                          CellEditEnding="dg_users_log_CellEditEnding">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding id}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="log" Binding="{Binding log, Mode=TwoWay}"/>
+                    </DataGrid.Columns>
+                </DataGrid>           
+            </TabItem>
+            <TabItem Header="auctions" >
+                <DataGrid x:Name="dg_auctions" AutoGenerateColumns="False" 
+                          CellEditEnding="dg_auctions_CellEditEnding">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding id}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="start" Binding="{Binding dt_start, Mode=TwoWay}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="finish" Binding="{Binding dt_finish, Mode=TwoWay}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="price" Binding="{Binding price, Mode=TwoWay}"/>
+                        <DataGridTextColumn Header="start price" Binding="{Binding start_price}"/>
+                        <DataGridTextColumn Header="car id" Binding="{Binding car_id, Mode=TwoWay}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="last buyer" Binding="{Binding last_buyer, Mode=TwoWay}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="owner" Binding="{Binding owner, Mode=TwoWay}" IsReadOnly="True"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="cars" >
+                <DataGrid x:Name="dg_cars" AutoGenerateColumns="False" 
+                          CellEditEnding="dg_cars_CellEditEnding">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding id}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="type" Binding="{Binding type, Mode=TwoWay}" />
+                        <DataGridTextColumn Header="brend" Binding="{Binding brend, Mode=TwoWay}" />
+                        <DataGridTextColumn Header="model" Binding="{Binding model, Mode=TwoWay}"/>
+                        <DataGridTextColumn Header="year" Binding="{Binding year}"/>
+                        <DataGridTextColumn Header="fuel" Binding="{Binding fuel, Mode=TwoWay}" />
+                        <DataGridTextColumn Header="mileage" Binding="{Binding mileage, Mode=TwoWay}" />
+                        <DataGridTextColumn Header="owner" Binding="{Binding id_user, Mode=TwoWay}" IsReadOnly="True" />
+                        <DataGridTextColumn Header="context" Binding="{Binding context, Mode=TwoWay}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="forum sections" >
+                <DataGrid x:Name="dg_forum_section" AutoGenerateColumns="False" 
+                          CellEditEnding="dg_forum_section_CellEditEnding">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding id}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="name" Binding="{Binding name, Mode=TwoWay}" />
+                        <DataGridTextColumn Header="color" Binding="{Binding color, Mode=TwoWay}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="forum topics" >
+                <DataGrid x:Name="dg_forum_topics" AutoGenerateColumns="False" 
+                          CellEditEnding="dg_forum_topics_CellEditEnding">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding id}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="id author" Binding="{Binding id_author, Mode=TwoWay}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="id section" Binding="{Binding id_section, Mode=TwoWay}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="name" Binding="{Binding name, Mode=TwoWay}"/>
+                        <DataGridTextColumn Header="date_create" Binding="{Binding date_create}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="context" Binding="{Binding context, Mode=TwoWay}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="forum answers" >
+                <DataGrid x:Name="dg_forum_answers" AutoGenerateColumns="False" 
+                          CellEditEnding="dg_forum_answers_CellEditEnding">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding id}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="id author" Binding="{Binding id_author}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="id topic" Binding="{Binding id_topic, Mode=TwoWay}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="date create" Binding="{Binding date_create, Mode=TwoWay}" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="context" Binding="{Binding context, Mode=TwoWay}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            
+            
+            <TabItem Header="Delete Info" Background="LightCoral">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock FontSize="16">Delete Auction</TextBlock>
+                    <ComboBox x:Name="cb_auctions"  Grid.Column="1"></ComboBox>
+                    <Button Content="Delete Auction" Grid.Column="2" Click="But_del_Auction"/>
+
+                    <TextBlock FontSize="16" Grid.Row="1">Delete car</TextBlock>
+                    <ComboBox x:Name="cb_cars" Grid.Column="1" Grid.Row="1"></ComboBox>
+                    <Button Content="Delete Car" Grid.Column="2" Grid.Row="1" Click="But_del_car"/>
+
+                    <TextBlock FontSize="16" Grid.Row="2">Delete topic</TextBlock>
+                    <ComboBox x:Name="cb_forum_topics" Grid.Column="1" Grid.Row="2"></ComboBox>
+                    <Button Content="Delete forum topic" Grid.Column="2" Grid.Row="2" Click="But_del_topic"/>
+
+                    <TextBlock FontSize="16" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Margin="10">Select user</TextBlock>
+                    <ComboBox x:Name="cb_users" Grid.Column="2" Grid.Row="3" Margin="0,10,0,10"/>
+
+                    <TextBlock FontSize="16" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center">Topic</TextBlock>
+                    <ComboBox x:Name="cb_user_topic" Grid.Column="1" Grid.Row="4"/>
+                    <Button Content="Delete forum answers" Grid.Column="2" Grid.Row="4" Click="But_del_user_answers"/>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

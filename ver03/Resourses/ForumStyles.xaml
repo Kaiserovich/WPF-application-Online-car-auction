@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ver03.Resourses">
+
+    <Style x:Key="answer_style00">
+        <Setter Property="Control.Background" Value="{StaticResource grey00}" />
+        <Setter Property="Control.Foreground" Value="{StaticResource grey01}" />
+        <Setter Property="Control.Margin" Value="0,2,0,2"/>
+    </Style>
+    <Style x:Key="answer_style01">
+        <Setter Property="Control.Foreground" Value="{StaticResource grey01}" />
+    </Style>
+    <Style x:Key="answer_style02">
+        <Setter Property="Control.Foreground" Value="{StaticResource grey01}" />
+    </Style>
+
+</ResourceDictionary>

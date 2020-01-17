@@ -1,0 +1,34 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ver03.Resourses">
+
+
+    <SolidColorBrush x:Key="grey00" Color="#FFF0F0F0" />
+    <SolidColorBrush x:Key="grey01" Color="#FF686868" />
+    <SolidColorBrush x:Key="grey02" Color="Red" />
+
+    <SolidColorBrush Color="White" x:Key="BGColor00" />
+    <SolidColorBrush Color="Orange" x:Key="BGColor01" />
+
+    <SolidColorBrush Color="red" x:Key="ProgrBack00" />
+    <SolidColorBrush Color="Yellow" x:Key="ProgrBack01" />
+    <SolidColorBrush Color="Green" x:Key="ProgrBack02" />
+    <SolidColorBrush Color="#FF686868" x:Key="ProgrBackStroke" />
+    <SolidColorBrush Color="#FFF0F0F0" x:Key="AuctionPageBG" />
+
+    <SolidColorBrush x:Key="ell_CarIsMy" Color="#92f442" />
+
+    <SolidColorBrush x:Key="Orange00"  Color="Orange" />
+    <SolidColorBrush x:Key="Green00" Color="#92f442" />
+    <SolidColorBrush x:Key="Red00" Color="Red" />
+
+    <SolidColorBrush x:Key="Prog12" Color="#f48d01"/>
+    <SolidColorBrush x:Key="Prog13" Color="#f47200"/>
+    <SolidColorBrush x:Key="Prog14" Color="#f45d00"/>
+    <SolidColorBrush x:Key="Prog15" Color="#f44500"/>
+    <SolidColorBrush x:Key="Prog16" Color="#f43000"/>
+    <SolidColorBrush x:Key="Prog17" Color="White"/>
+
+
+
+</ResourceDictionary>

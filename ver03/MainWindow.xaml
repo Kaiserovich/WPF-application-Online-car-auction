@@ -1,0 +1,225 @@
+﻿<Window x:Class="ver03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ver03"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="770" MinWidth="1050" MinHeight="720">
+    <Window.Resources>
+        <Style x:Key="ST1">
+            <Setter Property="Control.FontSize" Value="30" />
+            <Setter Property="Control.BorderBrush" Value="Black" />
+            <Setter Property="Control.BorderThickness" Value="0"/>
+            <Setter Property="Control.Background" Value="#FF686868" />
+            <Setter Property="Control.Foreground" Value="White" />
+            <Setter Property="Control.Margin" Value="10" />
+        </Style>
+        <Style x:Key="ST2">
+            <Setter Property="Control.FontSize" Value="22" />
+            <Setter Property="Control.BorderBrush" Value="Black" />
+            <Setter Property="Control.BorderThickness" Value="0"/>
+            <Setter Property="Control.Background" Value="#FF686868" />
+            <Setter Property="Control.Foreground" Value="White" />
+            <Setter Property="Control.Margin" Value="15, 0, 15, 0" />
+            <Setter Property="Control.Padding" Value="10,4,10,5" />
+        </Style>
+        <Style x:Key="ST3">
+            <Setter Property="Control.FontSize" Value="22" />
+            <Setter Property="Control.BorderThickness" Value="0"/>
+            <Setter Property="Control.Background" Value="#FF686868" />
+            <Setter Property="Control.Foreground" Value="White" />
+            <Setter Property="Control.Margin" Value="0" />
+            <Setter Property="Control.Padding" Value="0,4,0,5" />
+        </Style>
+        <Style x:Key="WinStyle1">
+            <Setter Property="Control.Background" Value="#FFC9C9C9" />
+        </Style>
+        <Style x:Key="WinStyle2">
+            <Setter Property="Control.Background" Value="#FFF0F0F0" />
+        </Style>
+
+        <Storyboard x:Key="Storyboard1" RepeatBehavior="Forever">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse">
+                <EasingColorKeyFrame KeyTime="0" Value="#FF686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.1" Value="#BF686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#7F686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#3F686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.4" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.6" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.7" Value="#00686868"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse1">
+                <EasingColorKeyFrame KeyTime="0" Value="#BF686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.1" Value="#7F686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#3F686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.4" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.6" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.7" Value="#FF686868"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse2">
+                <EasingColorKeyFrame KeyTime="0" Value="#7F686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.1" Value="#3F686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.4" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.6" Value="#FF686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.7" Value="#BF686868"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse3">
+                <EasingColorKeyFrame KeyTime="0" Value="#3F686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.1" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.4" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#FF686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.6" Value="#BF686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.7" Value="#7F686868"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse4">
+                <EasingColorKeyFrame KeyTime="0" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.1" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.4" Value="#FF686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#BF686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.6" Value="#7F686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.7" Value="#3F686868"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse5">
+                <EasingColorKeyFrame KeyTime="0" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.1" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FF686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.4" Value="#BF686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#7F686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.6" Value="#3F686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.7" Value="#00686868"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse6">
+                <EasingColorKeyFrame KeyTime="0" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FF686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#BF686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#7F686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.4" Value="#3F686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.6" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.7" Value="#00686868"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse7">
+                <EasingColorKeyFrame KeyTime="0" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.1" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#BF686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.4" Value="#7F686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#3F686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.6" Value="#00686868"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.7" Value="#00686868"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="220" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Canvas Grid.ColumnSpan="5" Grid.RowSpan="2" Grid.Row="0"  Background="#FF686868"/>
+        <Grid  Grid.ColumnSpan="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Command="{Binding LoadMainPage, Mode=OneTime}" Style="{StaticResource ST3}" Grid.Column="0">
+                    Главная
+                </Button>
+                <Button Command="{Binding LoadAuctions, Mode=OneTime}"  Style="{StaticResource ST3}" Grid.Column="1">
+                    Аукционы
+                </Button>
+                <Button Style="{StaticResource ST3}" Click="But_Autopark_Click" Grid.Column="2">
+                    Объявления
+                </Button>
+            <Button Command="{Binding LoadInfo, Mode=OneTime}" Style="{StaticResource ST3}" Grid.Column="3">
+                Информация
+            </Button>
+            <Button Command="{Binding LoadForum, Mode=OneTime}"   Style="{StaticResource ST3}" Grid.Column="4">
+                    Форум
+                </Button>
+                <Button Command="{Binding Authorization, Mode=OneTime}" Style="{StaticResource ST3}" Grid.Column="5">
+                    Авторизация
+                </Button>
+            </Grid>
+            <!--<Button Style="{StaticResource ST3}">
+                Главная
+            </Button>
+            <Button Command="{Binding LoadAuctions, Mode=OneTime}"  Style="{StaticResource ST3}">
+                Аукционы
+            </Button>
+                <Button Style="{StaticResource ST3}" Click="But_Autopark_Click">
+                    Объявления
+            </Button>
+                <Button Style="{StaticResource ST3}">
+                    Информация
+                </Button>
+                <Button Style="{StaticResource ST3}">
+                    Статьи
+                </Button>
+            <Button Command="{Binding LoadForum, Mode=OneTime}"   Style="{StaticResource ST3}" >
+                Форум
+            </Button>-->
+            <!--<Button Command="{Binding Authorization, Mode=OneTime}" Style="{StaticResource ST3}">
+                Авторизация
+            </Button>-->
+
+        <Canvas Grid.ColumnSpan="5" Grid.RowSpan="2" Grid.Row="1" Style="{StaticResource WinStyle1}"/>
+        <Canvas Grid.Column="1" Grid.RowSpan="2" Grid.Row="1"  Style="{StaticResource WinStyle2}"/>
+        <Canvas x:Name="Can_log" Grid.Column="3" Grid.RowSpan="2" Grid.Row="1" Style="{StaticResource WinStyle2}"/>
+        <StackPanel Grid.Column="3" Grid.Row="1" VerticalAlignment="Top">
+            <Grid Grid.Row="0" HorizontalAlignment="Center" Margin="0,10,0,10">
+                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" MouseDown="Sp_User_Room">
+                    <TextBlock x:Name="tblock_nick"  Text="Гость" FontSize="30" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+            <Button Command="{Binding LoadLoginUCCommand, Mode=OneTime}" x:Name="but_login"
+                 HorizontalAlignment="Stretch" Content="Войти" Style="{StaticResource ButStyle00}" Margin="10,0,10,0">
+            </Button>
+            <Button Command="{Binding ExitAccount, Mode=OneTime}" x:Name="but_exit" Visibility="Collapsed"
+                 HorizontalAlignment="Stretch" Content="Выйти" Style="{StaticResource ButStyle00}" Margin="10,5,10,0">
+            </Button>
+            <Button Command="{Binding LoadRegistrationCommand, Mode=OneTime}" x:Name="but_regist"
+                 HorizontalAlignment="Stretch" Content="Регистрация"  Style="{StaticResource ButStyle00}" Margin="10,5,10,0">
+            </Button>
+        </StackPanel>
+        <ContentPresenter Grid.Column="1" Grid.Row="1" x:Name="OutputView" />
+        <Grid x:Name="LoadIndic" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
+            <Ellipse x:Name="ellipse1" Fill="#7F686868" HorizontalAlignment="Left" Height="30" Margin="49.033,10,0,0" VerticalAlignment="Top" Width="30"/>
+            <Ellipse x:Name="ellipse" Fill="#7F686868" HorizontalAlignment="Left" Height="30" Margin="96.031,10,0,0" VerticalAlignment="Top" Width="30"/>
+            <Ellipse x:Name="ellipse2" Fill="#7F686868" HorizontalAlignment="Left" Height="30" Margin="10,44.333,0,0" VerticalAlignment="Top" Width="30"/>
+            <Ellipse x:Name="ellipse3" Fill="#7F686868" HorizontalAlignment="Left" Height="30" Margin="10,89.667,0,0" VerticalAlignment="Top" Width="30"/>
+            <Ellipse x:Name="ellipse4" Fill="#7F686868" HorizontalAlignment="Left" Height="30" Margin="49.033,129,0,0" VerticalAlignment="Top" Width="30"/>
+            <Ellipse x:Name="ellipse5" Fill="#7F686868" HorizontalAlignment="Left" Height="30" Margin="96.031,129,0,0" VerticalAlignment="Top" Width="30"/>
+            <Ellipse x:Name="ellipse6" Fill="#7F686868" HorizontalAlignment="Left" Height="30" Margin="132,44.333,0,0" VerticalAlignment="Top" Width="30"/>
+            <Ellipse x:Name="ellipse7" Fill="#7F686868" HorizontalAlignment="Left" Height="30" Margin="132,89.667,0,0" VerticalAlignment="Top" Width="30"/>
+        </Grid>
+    </Grid>
+</Window>
