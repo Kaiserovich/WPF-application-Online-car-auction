@@ -1,6 +1,6 @@
 # WPF-application-Online-car-auction
 
-C# WPF application using the MVVM pattern to be able to analyze the number of steps taken over a certain period (with plotting) for different users
+WPF applications "Online Car Auction" is an application specializing in the provision of services for the sale and purchase of cars both through an auction and through a regular contract of sale.
 
 API - WPF was chosen as the application programming interface.
 
