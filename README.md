@@ -7,7 +7,7 @@ WPF application "Internet Car Auction" - an application for selling and buying c
 - Entity Framework 6.1 was chosen as the database access technology.
 - The application is built on MVVM architecture.
 
-## WPF**-приложение “Аукцион автомобилей”**
+## **WPF-приложение “Аукцион автомобилей”**
 
 WPF приложения «Интернет-аукцион автомобилей» - приложение, по продажи и покупки автомобилей как через аукцион, так и напрямую.
 
